@@ -1,0 +1,90 @@
+﻿<UserControl
+    x:Class="WealthManager.View.Settings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:WealthManager.View"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="720"
+    d:DesignWidth="1052"
+    Background="{DynamicResource MaterialDesignPaper}"
+    FontFamily="{materialDesign:MaterialDesignFont}"
+    TextElement.FontSize="14"
+    TextElement.FontWeight="Medium"
+    TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+    mc:Ignorable="d">
+    <Grid>
+        <ScrollViewer>
+
+            <StackPanel>
+
+                <TextBlock
+                    Margin="0,0,0,20"
+                    Padding="20"
+                    Background="#FF17FFBA"
+                    FontSize="30"
+                    FontWeight="DemiBold"
+                    Text="About WeatherFinance" />
+
+                <Border
+                    Height="2"
+                    Margin="0,8"
+                    Background="#CC2B2B2B"
+                    CornerRadius="1000" />
+
+                <TextBlock FontSize="24" TextWrapping="Wrap">
+                    Welcome to WeathFinance – your ultimate financial companion.
+                    WeathFinance is a powerful and intuitive personal finance software
+                    designed to empower you on your journey toward financial well-being.<LineBreak />
+                </TextBlock>
+                <Border
+                    Height="2"
+                    Margin="0,8"
+                    Background="#CC2B2B2B"
+                    CornerRadius="1000" />
+                <TextBlock FontSize="24" TextWrapping="Wrap">
+                    <LineBreak />
+                    With WeathFinance, you can effortlessly manage your income,
+                    expenses, investments, and savings all in one place.
+                    Our user-friendly interface provides you with clear
+                    insights into your financial health, helping you make
+                    informed decisions and achieve your financial goals<LineBreak />
+                </TextBlock>
+
+                <Border
+                    Height="2"
+                    Margin="0,8"
+                    Background="#CC2B2B2B"
+                    CornerRadius="1000" />
+
+                <TextBlock FontSize="24" TextWrapping="Wrap">
+                    <LineBreak />
+                    ● Comprehensive Overview: Gain a holistic view of your financial landscape through detailed reports, interactive charts, and customizable dashboards.<LineBreak /><LineBreak /><LineBreak />
+                    ● Smart Budgeting: Create, track, and analyze budgets tailored to your lifestyle. Stay on top of your spending and save for what truly matters.<LineBreak /><LineBreak /><LineBreak />
+                    ● Investment Insights: Monitor the performance of your investment portfolio and stay informed about market trends. Make educated investment choices to grow your wealth.<LineBreak /><LineBreak /><LineBreak />
+                    ● Goal Tracking: Set and monitor financial goals, whether it's a dream vacation, a new home, or building an emergency fund. WeathFinance keeps you motivated and on track.<LineBreak /><LineBreak /><LineBreak />
+                    ● Expense Categorization: Automatically categorize expenses for a clearer understanding of where your money is going. Take control of your spending patterns.<LineBreak /><LineBreak /><LineBreak />
+                    ● Secure and Private: We take your data security seriously. Your financial information is encrypted and stored securely, ensuring your privacy at all times.<LineBreak /><LineBreak />
+                </TextBlock>
+                <Border
+                    Height="2"
+                    Margin="0,8"
+                    Background="#CC2B2B2B"
+                    CornerRadius="1000" />
+                <TextBlock
+                    Padding="20"
+                    HorizontalAlignment="Center"
+                    FontSize="24"
+                    TextWrapping="Wrap">
+                    Join thousands of satisfied users who are taking control of their finances with WeathFinance. Start your journey toward financial prosperity today.
+                </TextBlock>
+                <Border
+                    Height="2"
+                    Margin="0,8,0,20"
+                    Background="#CC2B2B2B"
+                    CornerRadius="1000" />
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
