@@ -23,7 +23,7 @@
         <vm:CustomerVM />
     </UserControl.DataContext>
 
-    <Grid Margin="0,-30,0,30">
+    <Grid Margin="0,-27,0,7">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="255*" />
             <ColumnDefinition Width="326*" />
@@ -42,9 +42,12 @@
         </Grid.RowDefinitions>
 
         <TextBlock
-            Margin="56,44,2,28"
-            HorizontalAlignment="Stretch"
-            VerticalAlignment="Stretch"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            Width="180"
+            Height="48"
+            Margin="191,44,0,0"
+            VerticalAlignment="Top"
             FontSize="30"
             FontWeight="SemiBold"
             Foreground="Black"
@@ -52,43 +55,20 @@
             Text="User settings" />
 
         <!--  Nome e sobrenome do usuário  -->
-        <TextBlock
-            x:Name="UserName"
-            Grid.Row="1"
-            Grid.ColumnSpan="2"
-            Margin="202,22,196,62"
-            HorizontalAlignment="Stretch"
-            VerticalAlignment="Stretch"
-            FontSize="30"
-            FontWeight="SemiBold"
-            Foreground="Black"
-            Style="{StaticResource Text_Style}"
-            Text="{Binding ElementName=firstName_tb, Path=Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
         <TextBlock
             Grid.Row="2"
+            Grid.Column="1"
             Grid.ColumnSpan="2"
-            Margin="56,52,0,22"
+            Margin="19,34,25,40"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
             FontSize="30"
             Foreground="Black"
             Style="{StaticResource Text_Style}"
-            Text="Personal Information" />
+            Text="Personal Information"
+            TextAlignment="Center" />
 
-        <!--  Atual cargo do usuário  -->
-        <TextBlock
-            Grid.Row="1"
-            Grid.ColumnSpan="2"
-            Height="29"
-            Margin="200,71,147,0"
-            HorizontalAlignment="Stretch"
-            VerticalAlignment="Top"
-            FontSize="24"
-            FontWeight="SemiBold"
-            Foreground="Black"
-            Style="{StaticResource Text_Style}"
-            Text="Data analyst" />
 
         <!--  First name  -->
         <TextBox
@@ -97,24 +77,25 @@
             Grid.RowSpan="2"
             Grid.ColumnSpan="2"
             Height="60"
-            Margin="56,112,241,0"
+            Margin="244,94,53,0"
             VerticalAlignment="Top"
-            materialDesign:HintAssist.Hint="First Name"
+            materialDesign:HintAssist.Hint="Name"
             Background="#e1e1e1"
             FontSize="20"
-            Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+            Text="{Binding _firstName}" />
 
         <!--  Last name  -->
         <TextBox
-            x:Name="lastName_tb"
+            x:Name="phone_tb"
             Grid.Row="2"
             Grid.RowSpan="2"
             Grid.Column="1"
-            Grid.ColumnSpan="2"
+            Grid.ColumnSpan="3"
             Height="61"
-            Margin="125,111,141,0"
+            Margin="287,93,208,0"
             VerticalAlignment="Top"
-            materialDesign:HintAssist.Hint="Last name"
+            materialDesign:HintAssist.Hint="Phone"
             Background="#e1e1e1"
             FontSize="20"
             Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
@@ -123,9 +104,8 @@
         <TextBox
             x:Name="userEmail_tb"
             Grid.Row="3"
-            Grid.RowSpan="2"
             Grid.ColumnSpan="2"
-            Margin="56,70,241,109"
+            Margin="244,52,53,7"
             materialDesign:HintAssist.Hint="Email"
             Background="#e1e1e1"
             FontSize="20"
@@ -133,12 +113,11 @@
 
         <!--  Role  -->
         <TextBox
-            x:Name="userRole_tb"
+            x:Name="userJob_tb"
             Grid.Row="3"
-            Grid.RowSpan="2"
             Grid.Column="1"
-            Grid.ColumnSpan="2"
-            Margin="125,70,141,109"
+            Grid.ColumnSpan="3"
+            Margin="287,52,208,7"
             materialDesign:HintAssist.Hint="Job"
             Background="#e1e1e1"
             FontSize="20"
@@ -149,40 +128,44 @@
             x:Name="userBio_tb"
             Grid.Row="4"
             Grid.RowSpan="2"
-            Grid.ColumnSpan="3"
-            Margin="56,33,141,60"
+            Grid.ColumnSpan="4"
+            Margin="244,15,208,78"
             materialDesign:HintAssist.Hint="Bio"
             Background="#e1e1e1"
             FontSize="20"
             Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
 
-        <Button
-            x:Name="UserSettingsPhoto_btn"
-            Grid.RowSpan="3"
-            Width="100"
-            Height="100"
-            Margin="56,111,49,99"
-            Background="#e3e3e3"
-            BorderBrush="#e3e3e3"
-            BorderThickness="20">
-            <materialDesign:PackIcon
-                Width="80"
-                Height="80"
-                HorizontalAlignment="Center"
-                Foreground="Black"
-                Kind="User" />
-        </Button>
+        <materialDesign:PackIcon Kind="User" Width="100" Height="100" Grid.Column="1" Grid.ColumnSpan="2" Margin="231,5,0,0" Grid.Row="1"/>
 
         <Button
-            x:Name="UserSettingsSaveInfo_btn"
+            x:Name="UserSettingsPhoto_btn"
+            Grid.Row="1"
+            Grid.Column="1"
+            Width="100"
+            Height="100"
+            Margin="231,9,0,0"
+            HorizontalContentAlignment="Stretch"
+            VerticalContentAlignment="Stretch"
+            materialDesign:ButtonAssist.CornerRadius="60"
+            Click="UserSettingsPhoto_btn_Click" HorizontalAlignment="Left" Grid.ColumnSpan="2" VerticalAlignment="Top">
+            <Button.Background>
+                <ImageBrush x:Name="imagePicture" />
+            </Button.Background>
+        </Button>
+
+
+
+        <Button
+            x:Name="UserSettingsSavebtn"
             Grid.Row="5"
             Grid.Column="1"
-            Margin="56,76,163,10"
+            Margin="217,59,1,29"
             Background="LightGreen"
             BorderBrush="LightGreen"
             BorderThickness="16"
-            Click="UserSettingsSaveInfo_btn_Click"
-            Content="Save" />
+            Click="UserSettingsSavebtn_Click"
+            Content="Save"
+            Foreground="White" />
 
     </Grid>
 </UserControl>

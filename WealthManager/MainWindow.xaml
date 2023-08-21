@@ -86,10 +86,33 @@
                                 VerticalAlignment="Center"
                                 Foreground="White"
                                 Kind="AccountCog" />
-                            <TextBlock
-                                x:Name="UserNameMW"
-                                Style="{StaticResource Text_Style}"
-                                Text="" />
+                            <StackPanel>
+                                <TextBlock
+                                    x:Name="UserNameMW"
+                                    Margin="60,5,0,0"
+                                    FontSize="18"
+                                    Style="{StaticResource Text_Style}"
+                                    TextWrapping="Wrap" />
+                                <TextBlock
+                                    x:Name="UserBalance"
+                                    Margin="60,0"
+                                    FontSize="14"
+                                    Style="{StaticResource Text_Style}" />
+                            </StackPanel>
+                            <Button
+                                x:Name="MainButtonBackground"
+                                Width="40"
+                                Height="40"
+                                Margin="5,5,0,5"
+                                HorizontalAlignment="Left"
+                                HorizontalContentAlignment="Stretch"
+                                VerticalContentAlignment="Stretch"
+                                materialDesign:ButtonAssist.CornerRadius="60"
+                                BorderBrush="Transparent">
+                                <Button.Background>
+                                    <ImageBrush x:Name="MainWindowImage" />
+                                </Button.Background>
+                            </Button>
                         </Grid>
                     </menu:Btn>
                     <Border Height="30" Background="Transparent" />

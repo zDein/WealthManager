@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Net.Http.Headers;
 using WeathManager.Utilities;
+using WealthManager.View;
 
 namespace WealthManager.ViewModel
 {
@@ -29,7 +30,6 @@ namespace WealthManager.ViewModel
         private void Home(object obj) => CurrentView = new HomeVM();
         private void Customer(object obj) => CurrentView = new CustomerVM();
         private void Product(object obj) => CurrentView = new ProductVM();
-        private void Order(object obj) => CurrentView = new OrderVM();
         private void Transaction(object obj) => CurrentView = new TransactionsVM();
         private void Shipment(object obj) => CurrentView = new ShipmentVM();
         private void Setting(object obj) => CurrentView = new SettingVM();
@@ -39,11 +39,9 @@ namespace WealthManager.ViewModel
             HomeCommand = new RelayCommand(Home);
             CustomersCommand = new RelayCommand(Customer);
             ProductsCommand = new RelayCommand(Product);
-            OrdersCommand = new RelayCommand(Order);
             TransactionsCommand = new RelayCommand(Transaction);
             ShipmentCommand = new RelayCommand(Shipment);
             SettingsCommand = new RelayCommand(Setting);
-
 
             // Pagina inicial
             CurrentView = new HomeVM();

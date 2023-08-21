@@ -15,17 +15,17 @@
     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
     mc:Ignorable="d">
     <Grid>
+        <TextBlock
+            Margin="0,0,0,610"
+            Padding="20"
+            Background="#FF17FFBA"
+            FontSize="30"
+            FontWeight="DemiBold"
+            Text="About WeatherFinance" />
         <ScrollViewer>
 
-            <StackPanel>
+            <StackPanel Margin="0 100">
 
-                <TextBlock
-                    Margin="0,0,0,20"
-                    Padding="20"
-                    Background="#FF17FFBA"
-                    FontSize="30"
-                    FontWeight="DemiBold"
-                    Text="About WeatherFinance" />
 
                 <Border
                     Height="2"

@@ -40,16 +40,13 @@
         </Grid.RowDefinitions>
 
         <TextBlock
-            Grid.Row="0"
-            Width="259"
-            Height="36"
-            Margin="28,33,0,0"
-            VerticalAlignment="Top"
+            x:Name="HomeUserName"
+            Grid.ColumnSpan="4"
+            Margin="28,33,123,24"
             FontSize="30"
             FontWeight="SemiBold"
             Foreground="Black"
-            Style="{StaticResource Text_Style}"
-            Text="Hello, User123456!" />
+            Style="{StaticResource Text_Style}" />
 
         <!--  Balanço total conta  -->
         <Border
@@ -67,9 +64,9 @@
                     Color="#FFDCD8D8" />
             </Border.Effect>
             <TextBlock
+                x:Name="totalBalanceHome"
                 Margin="10,16,23,72"
-                FontSize="30"
-                Text="$ 35,545.00" />
+                FontSize="30" />
 
         </Border>
         <TextBlock
@@ -149,8 +146,7 @@
             VerticalAlignment="Top"
             FontSize="30"
             FontWeight="Regular"
-            Foreground="#FF6F6F6F"
-            Text="Total Expenses" />
+            Foreground="#FF6F6F6F"><Run Text="Revenue" /><Run Language="pt-br" Text="s" /></TextBlock>
 
         <Border
             Grid.Row="3"
@@ -170,17 +166,18 @@
         </Border>
 
         <Border
-            Grid.Row="2"
-            Grid.RowSpan="4"
+            Grid.Row="3"
+            Grid.RowSpan="3"
             Grid.Column="1"
             Grid.ColumnSpan="2"
-            Margin="376,81,30,35"
+            Margin="354,58,30,33"
             Background="DarkCyan">
             <TextBlock
                 Margin="10,0,0,0"
                 Foreground="White"
                 Style="{StaticResource Text_Style}"
-                Text="Aqui vai a lista de despesas" />
+                Text="Aqui o gráfico de categoria das despesas"
+                TextWrapping="Wrap" />
         </Border>
 
         <TextBlock
@@ -193,15 +190,14 @@
             Style="{StaticResource Text_Style}"
             Text="Expense activity" />
         <TextBlock
-            Grid.Row="2"
+            Grid.Row="3"
             Grid.Column="2"
             Width="161"
             Height="28"
-            Margin="5,29,0,0"
-            VerticalAlignment="Top"
+            Margin="1,6,0,0"
             Foreground="#FF6F6F6F"
             Style="{StaticResource Text_Style}"
-            Text="Expense breakdown" />
+            Text="Expense category" VerticalAlignment="Top" />
 
         <!--  Despesas recentes conta  -->
         <Border
@@ -248,8 +244,7 @@
             VerticalAlignment="Top"
             FontSize="30"
             FontWeight="Regular"
-            Foreground="#FF6F6F6F"
-            Text="Recent Expenses" />
+            Foreground="#FF6F6F6F"><Run Language="pt-br" Text="Expenses" /></TextBlock>
     </Grid>
 
 </UserControl>

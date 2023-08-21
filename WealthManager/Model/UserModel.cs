@@ -6,38 +6,38 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using WealthManager.ViewModel;
+using System.Windows.Media.Imaging;
 
 namespace WeathManager.Model
 {
-    class UserModel : INotifyPropertyChanged
+    public class UserModel : INotifyPropertyChanged
     {
+        // Instancia estática da classe para ser usada por todo o programa
+        public static UserModel instance;
+        
+        // Informações básicas do usuário
+        public static Guid _id = Guid.NewGuid();
+        public static string _name = string.Empty;
+        public static string _phone = string.Empty;
+        public static string _jobs = string.Empty;
+        public static string _email = string.Empty;
+        public static string _bio = string.Empty;
+        public static double Balance { get; set; }
 
-        private Guid _id = Guid.NewGuid();
-        public string _firstName = string.Empty;
-        private string _lastName = string.Empty;
-        private string _jobs = string.Empty;
-        private string _email = string.Empty;
-        private string _bio = string.Empty;
+        // Salva o caminho da imagem selecionada
+        public static string? SelectedImagePath { get; set; } = string.Empty;
 
+
+        public UserModel()
+        {
+            instance = this;
+        }
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        public static UserModel CreateNewUser()
-        {
-            return new UserModel();
-        }
-
-        public Guid Id { get { return _id; } }
-
-        public string FirstName
-        {
-            get { return _firstName; }
-            set { if (FirstName != null) _firstName = value; NotifyPropertyChanged(); }
         }
     }
 }

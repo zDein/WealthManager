@@ -10,7 +10,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <materialDesign:CustomColorTheme
                     BaseTheme="Light"
-                    PrimaryColor="Aqua"
+                    PrimaryColor="#FF0061FF"
                     SecondaryColor="DarkGreen" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
                 <ResourceDictionary Source="Styles/Page.xaml" />
