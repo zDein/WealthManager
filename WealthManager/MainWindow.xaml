@@ -152,7 +152,7 @@
                                 VerticalAlignment="Center"
                                 Foreground="White"
                                 Kind="AccountCash" />
-                            <TextBlock Style="{StaticResource Text_Style}" Text="Expenses" />
+                            <TextBlock Style="{StaticResource Text_Style}" Text="Finances" />
                         </Grid>
                     </menu:Btn>
 

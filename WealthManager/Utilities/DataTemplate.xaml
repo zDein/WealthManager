@@ -24,7 +24,7 @@
         <view:Shipments />
     </DataTemplate>
 
-    <DataTemplate DataType="{x:Type vm:TransactionsVM}">
-        <view:Transactions />
+    <DataTemplate DataType="{x:Type vm:FinancesVM}">
+        <view:Finances />
     </DataTemplate>
 </ResourceDictionary>

@@ -30,7 +30,7 @@ namespace WealthManager.ViewModel
         private void Home(object obj) => CurrentView = new HomeVM();
         private void Customer(object obj) => CurrentView = new CustomerVM();
         private void Product(object obj) => CurrentView = new ProductVM();
-        private void Transaction(object obj) => CurrentView = new TransactionsVM();
+        private void Transaction(object obj) => CurrentView = new FinancesVM();
         private void Shipment(object obj) => CurrentView = new ShipmentVM();
         private void Setting(object obj) => CurrentView = new SettingVM();
 

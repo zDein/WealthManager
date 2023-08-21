@@ -25,7 +25,6 @@
                                 Background="#007acc"
                                 CornerRadius="2"
                                 Visibility="Collapsed" />
-
                             <ContentPresenter />
                         </Grid>
                     </Border>

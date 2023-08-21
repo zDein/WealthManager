@@ -10,19 +10,28 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace WealthManager.View
 {
     /// <summary>
-    /// Interação lógica para Transactions.xam
+    /// Lógica interna para UpdatePage.xaml
     /// </summary>
-    public partial class Transactions : UserControl
+    public partial class UpdatePage : Window
     {
-        public Transactions()
+        public UpdatePage()
         {
             InitializeComponent();
+        }
+
+        private void updateFinance_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void cancelUpdateFinance_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

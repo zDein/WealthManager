@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WealthManager.Model.Enums
 {
-    public enum Types
+    public enum ExpenseTypes
     {
         Housing,
         Transportation,

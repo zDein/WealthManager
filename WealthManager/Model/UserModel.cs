@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using WealthManager.ViewModel;
 using System.Windows.Media.Imaging;
+using System.Collections.ObjectModel;
 
 namespace WeathManager.Model
 {
@@ -23,6 +24,8 @@ namespace WeathManager.Model
         public static string _email = string.Empty;
         public static string _bio = string.Empty;
         public static double Balance { get; set; }
+        public static ObservableCollection<FinanceModel> Finance { get; set; } = new ObservableCollection<FinanceModel>();
+
 
         // Salva o caminho da imagem selecionada
         public static string? SelectedImagePath { get; set; } = string.Empty;

@@ -8,7 +8,7 @@ using WeathManager.Utilities;
 
 namespace WealthManager.ViewModel
 {
-    class TransactionsVM : ViewModelBase
+    class FinancesVM : ViewModelBase
     {
         private readonly PageModel _pageModel;
         public decimal TransactionAmout
@@ -17,7 +17,7 @@ namespace WealthManager.ViewModel
             set { _pageModel.TransactionValue = value; OnPropertyChanged(); }
         }
 
-        public TransactionsVM()
+        public FinancesVM()
         {
             _pageModel = new PageModel();
             TransactionAmout = 5638;
