@@ -34,12 +34,12 @@
 
         </Grid.RowDefinitions>
         <TextBlock
-            Grid.Column="1"
-            Grid.ColumnSpan="2"
-            Margin="29,10,52,10"
+            Grid.ColumnSpan="3"
+            HorizontalAlignment="Center"
+            Margin="147,10,20,10"
             FontSize="30"
             FontWeight="Bold"
-            Text="Update finance" />
+            Text="Update transaction" />
         <TextBlock
             Grid.Row="1"
             Grid.ColumnSpan="2"
@@ -73,11 +73,13 @@
             Grid.Row="1"
             Grid.Column="1"
             Grid.ColumnSpan="2"
+            SelectedIndex="0"
             Margin="110,27,4,0"
             VerticalAlignment="Top"
             materialDesign:HintAssist.Hint="Type">
-            <ComboBoxItem Content="Income" />
             <ComboBoxItem Content="Expense" />
+            <ComboBoxItem Content="Income" />
+            <ComboBoxItem Content="Other" />
         </ComboBox>
 
         <ComboBox
@@ -86,12 +88,21 @@
             Grid.Column="1"
             Grid.ColumnSpan="2"
             Margin="110,27,4,0"
+            SelectedIndex="0"
             VerticalAlignment="Top"
             materialDesign:HintAssist.Hint="Category">
-
-            <ComboBoxItem Content="Test" />
-            <ComboBoxItem Content="Test2" />
-            <ComboBoxItem Content="Test3" />
+            <ComboBoxItem Content="Housing" />
+            <ComboBoxItem Content="Transportation" />
+            <ComboBoxItem Content="Food" />
+            <ComboBoxItem Content="Healthcare" />
+            <ComboBoxItem Content="Entertainment" />
+            <ComboBoxItem Content="Education" />
+            <ComboBoxItem Content="Utilities" />
+            <ComboBoxItem Content="Debt" />
+            <ComboBoxItem Content="Clothing" />
+            <ComboBoxItem Content="Taxes" />
+            <ComboBoxItem Content="Travel" />
+            <ComboBoxItem Content="Savings" />
             <ComboBoxItem Content="Test4" />
             <ComboBoxItem Content="Test5" />
             <ComboBoxItem Content="Test6" />

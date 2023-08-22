@@ -46,7 +46,7 @@
         <Border
             Grid.RowSpan="7"
             Grid.ColumnSpan="7"
-            Background="#632ED6" />
+            Background="#E3e3e3" />
 
 
         <DataGrid
@@ -68,7 +68,7 @@
                 <DataGridTextColumn Binding="{Binding Description}" Header="Description" />
                 <DataGridTextColumn Binding="{Binding Amount}" Header="Amount" />
                 <DataGridTextColumn Binding="{Binding FinanceType}" Header="Type" />
-                <DataGridTextColumn Binding="{Binding IncomeType}" Header="Category" />
+                <DataGridTextColumn Binding="{Binding ExpenseType}" Header="Category" />
                 <DataGridTextColumn
 
                     Binding="{Binding DateAdded}"
@@ -121,12 +121,13 @@
 
         <Button
             Grid.Column="5"
+            Grid.ColumnSpan="2"
             Width="150"
             Height="50"
-            VerticalAlignment="Bottom"
+            VerticalAlignment="Top"
             materialDesign:ButtonAssist.CornerRadius="30"
             Click="Button_Click"
             Content="New transaction"
-            Foreground="White" />
+            Foreground="White" Margin="17,45,0,0" HorizontalAlignment="Left" />
     </Grid>
 </UserControl>

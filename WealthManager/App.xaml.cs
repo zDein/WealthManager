@@ -1,4 +1,7 @@
 ﻿using System.Windows;
+using LiveChartsCore;
+using LiveChartsCore.SkiaSharpView;
+using SkiaSharp;
 
 namespace WealthManager
 {

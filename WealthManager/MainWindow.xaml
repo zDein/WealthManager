@@ -67,14 +67,14 @@
                             FontSize="16"
                             FontWeight="DemiBold"
                             Foreground="LightSeaGreen"
-                            Text="WeatherManager" />
+                            Text="Weather Manager" />
                     </StackPanel>
 
                     <Border
-                        Height="5"
+                        Height="2"
                         Background="#CC2B2B2B"
                         CornerRadius="1000" />
-                    <Border Height="30" Background="Transparent" />
+                    <Border Height="25" Background="Transparent" />
                     <!--  User settings  -->
                     <menu:Btn Command="{Binding CustomersCommand}" Style="{StaticResource BtnStyle}">
                         <Grid>
@@ -115,9 +115,9 @@
                             </Button>
                         </Grid>
                     </menu:Btn>
-                    <Border Height="30" Background="Transparent" />
+                    <Border Height="25" Background="Transparent" />
                     <Border
-                        Height="5"
+                        Height="2"
                         Background="#CC2B2B2B"
                         CornerRadius="1000" />
                     <Border Height="30" Background="Transparent" />
@@ -137,7 +137,7 @@
                                 VerticalAlignment="Center"
                                 Foreground="White"
                                 Kind="ViewDashboard" />
-                            <TextBlock Style="{StaticResource Text_Style}" Text="Home" />
+                            <TextBlock Style="{StaticResource Text_Style}" Text="Panels" />
                         </Grid>
                     </menu:Btn>
 
@@ -151,8 +151,8 @@
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
                                 Foreground="White"
-                                Kind="AccountCash" />
-                            <TextBlock Style="{StaticResource Text_Style}" Text="Finances" />
+                                Kind="ListBoxOutline" />
+                            <TextBlock Style="{StaticResource Text_Style}" Text="Transactions" />
                         </Grid>
                     </menu:Btn>
 

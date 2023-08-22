@@ -1,4 +1,6 @@
-﻿using System.Windows.Input;
+﻿using System.Windows;
+using System.Windows.Input;
+using WeathManager.Model;
 using WeathManager.Utilities;
 
 namespace WealthManager.ViewModel

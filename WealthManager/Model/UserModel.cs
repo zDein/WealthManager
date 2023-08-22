@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -11,8 +12,8 @@ namespace WeathManager.Model
         public static UserModel instance;
 
         // Variaveis da propria classe
-        decimal TotalRevenue = 0;
-        decimal TotalExpenses = 0;
+        public static decimal TotalRevenue = 0;
+        public static decimal TotalExpenses = 0;
 
         // Informações básicas do usuário
         public static Guid _id = Guid.NewGuid();
@@ -23,6 +24,8 @@ namespace WeathManager.Model
         public static string _bio = string.Empty;
         public static double Balance { get; set; }
         public static ObservableCollection<FinanceModel> Finance { get; set; } = new ObservableCollection<FinanceModel>();
+        public static ObservableCollection<decimal> ListAmounts { get; set; } = new ObservableCollection<decimal>();
+
 
 
         // Salva o caminho da imagem selecionada
@@ -42,32 +45,6 @@ namespace WeathManager.Model
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
-        }
-
-        public decimal GetTotalRevenue()
-        {
-            foreach (var finance in Finance)
-            {
-                if(finance.FinanceType == WealthManager.Model.Enums.FinanceTypes.Income)
-                {
-                    TotalRevenue += finance.Amount;
-                }
-            }
-
-            return TotalRevenue;
-        }
-
-        public decimal GetTotalExpenses()
-        {
-            foreach (var finance in Finance)
-            {
-                if (finance.FinanceType == WealthManager.Model.Enums.FinanceTypes.Expense)
-                {
-                    TotalExpenses += finance.Amount;
-                }
-            }
-
-            return TotalExpenses;
         }
     }
 }

@@ -58,7 +58,6 @@ namespace WealthManager.View
                         MessageBox.Show(ex.Message);
                         Close();
                     }
-                    MessageBox.Show($"Sucess: {finance.Id}\n{finance.Amount}");
                     MainWindow.instance.UserBalance.Text = String.Format("{0}", UserModel.Balance.ToString("C2", CultureInfo.CreateSpecificCulture("en-US")));
                     break;
                 }

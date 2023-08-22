@@ -34,16 +34,26 @@ namespace WealthManager.View
                 finance.Id = Guid;
                 finance.Description = addDescription.Text;
                 finance.FinanceType = (FinanceTypes)typeFinanceComboBox.SelectedIndex;
+                if(finance.FinanceType == FinanceTypes.Expense)
+                {
+                    finance.ExpenseType = (ExpenseTypes)typeIncomeExpenseComboBox.SelectedIndex;
+                }else if(finance.FinanceType == FinanceTypes.Income)
+                {
+                    finance.IncomeType = (IncomeTypes)typeIncomeExpenseComboBox.SelectedIndex;
+                }
                 finance.Amount = decimal.Parse(addAmount.Text);
                 if (finance.FinanceType == FinanceTypes.Income)
                 {
                     UserModel.Balance += (double)finance.Amount;
+                    UserModel.TotalRevenue += finance.Amount;
                 }
                 else if (finance.FinanceType == FinanceTypes.Expense)
                 {
                     UserModel.Balance -= (double)finance.Amount;
+                    UserModel.TotalExpenses += finance.Amount;
                 }
                 UserModel.Finance.Add(finance);
+                UserModel.ListAmounts.Add(finance.Amount);
             }
             catch (System.FormatException ex)
             {

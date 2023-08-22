@@ -50,10 +50,11 @@
         <TextBlock
             Grid.Column="1"
             Grid.ColumnSpan="2"
-            Margin="52,10,52,10"
             FontSize="30"
             FontWeight="Bold"
-            Text="New finance" />
+            Text="Add transaction"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center" />
         <TextBlock
             Grid.Row="1"
             Grid.ColumnSpan="2"
@@ -84,7 +85,7 @@
 
         <ComboBox
             x:Name="typeFinanceComboBox"
-            SelectedIndex="1"
+            SelectedIndex="0"
             Grid.Row="1"
             Grid.Column="1"
             Grid.ColumnSpan="2"
@@ -98,13 +99,22 @@
             Grid.Row="2"
             Grid.Column="1"
             Grid.ColumnSpan="2"
+            SelectedIndex="0"
             Margin="110,27,4,0"
             VerticalAlignment="Top"
             materialDesign:HintAssist.Hint="Category">
-
-            <ComboBoxItem Content="Test" />
-            <ComboBoxItem Content="Test2" />
-            <ComboBoxItem Content="Test3" />
+            <ComboBoxItem Content="Housing" />
+            <ComboBoxItem Content="Transportation" />
+            <ComboBoxItem Content="Food" />
+            <ComboBoxItem Content="Healthcare" />
+            <ComboBoxItem Content="Entertainment" />
+            <ComboBoxItem Content="Education" />
+            <ComboBoxItem Content="Utilities" />
+            <ComboBoxItem Content="Debt" />
+            <ComboBoxItem Content="Clothing" />
+            <ComboBoxItem Content="Taxes" />
+            <ComboBoxItem Content="Travel" />
+            <ComboBoxItem Content="Savings" />
         </ComboBox>
         <TextBlock
             Grid.Row="1"

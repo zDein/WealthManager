@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using WealthManager.Model.Enums;
 
 namespace WeathManager.Model
@@ -14,7 +15,6 @@ namespace WeathManager.Model
         public string Description { get; set; } = string.Empty;
         public object DateAdded { get; set; } = DateTime.Now.ToShortDateString();
         public decimal Amount { get; set; }
-
        
     }
 }

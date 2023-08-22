@@ -5,12 +5,13 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:WealthManager.View"
     xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+    xmlns:lvc2="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="clr-namespace:WealthManager.ViewModel"
     d:DesignHeight="667"
     d:DesignWidth="1052"
-    Background="{DynamicResource MaterialDesignPaper}"
+    Background="#e3e3e3"
     FontFamily="{materialDesign:MaterialDesignFont}"
     Style="{StaticResource Page_Style}"
     TextElement.FontSize="14"
@@ -152,13 +153,24 @@
         <Border
             Grid.Row="3"
             Grid.RowSpan="3"
+            CornerRadius="20"
             Grid.ColumnSpan="2"
             Width="696"
             Height="253"
             Margin="28,58,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Background="DarkBlue" />
+            Background="White" >
+            <Border.Effect>
+                <DropShadowEffect
+                    BlurRadius="20"
+                    ShadowDepth="-1"
+                    Color="#FFDCD8D8" />
+            </Border.Effect>
+            <lvc2:CartesianChart Series="{Binding Series}">
+                
+            </lvc2:CartesianChart>
+        </Border>
 
         <Border
             Grid.Row="3"
@@ -166,13 +178,24 @@
             Grid.Column="1"
             Grid.ColumnSpan="2"
             Margin="354,58,30,33"
-            Background="Transparent">
+            CornerRadius="20"
+            Background="White">
+            <Border.Effect>
+                <DropShadowEffect
+                    BlurRadius="20"
+                    ShadowDepth="-1"
+                    Color="#FFDCD8D8" />
+            </Border.Effect>
             <lvc:PieChart BorderBrush="#FFDCDADA" BorderThickness="1">
                 <lvc:PieChart.Series>
                     <lvc:PieSeries
                         Title="Expenses"
                         DataLabels="True"
-                        Values="3" />
+                        Values="1" />
+                    <lvc:PieSeries
+                        Title="1"
+                        DataLabels="True"
+                        Values="2" />
                     <lvc:PieSeries
                         Title="1"
                         DataLabels="True"
@@ -180,15 +203,11 @@
                     <lvc:PieSeries
                         Title="1"
                         DataLabels="True"
-                        Values="3" />
+                        Values="4" />
                     <lvc:PieSeries
-                        Title="1"
+                        Title="2"
                         DataLabels="True"
-                        Values="3" />
-                    <lvc:PieSeries
-                        Title="1"
-                        DataLabels="True"
-                        Values="3" />
+                        Values="5" />
                 </lvc:PieChart.Series>
             </lvc:PieChart>
         </Border>
@@ -201,7 +220,7 @@
             VerticalAlignment="Top"
             Foreground="#FF6F6F6F"
             Style="{StaticResource Text_Style}"
-            Text="Expense activity" />
+            Text="Transation tracker" />
         <TextBlock
             Grid.Row="3"
             Grid.Column="2"
@@ -259,6 +278,23 @@
             FontSize="30"
             FontWeight="Regular"
             Foreground="#FF6F6F6F"><Run Language="pt-br" Text="Expenses" /></TextBlock>
+
+        <Border 
+            Background="#e3e3e3"
+            CornerRadius="100" 
+            Grid.Column="1"
+            Grid.Row="1"
+            Margin="354,10,31,10" 
+            Grid.RowSpan="2" 
+            Grid.ColumnSpan="2">
+            <ListBox Background="Bisque" >
+                <ListBoxItem Height="60" Content="Notification 01" />
+                <ListBoxItem Height="60" Content="Notification 02" />
+                <ListBoxItem Height="60" Content="Notification 03" />
+                <ListBoxItem Height="60" Content="Notification 04" />
+                <ListBoxItem Height="60" Content="Notification 05" />
+            </ListBox>
+        </Border>
     </Grid>
 
 </UserControl>

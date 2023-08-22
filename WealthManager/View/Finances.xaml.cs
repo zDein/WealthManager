@@ -27,7 +27,25 @@ namespace WealthManager.View
 
         private void deleteInfoDG_Click(object sender, RoutedEventArgs e)
         {
-
+            string id = (((Button)sender).DataContext as FinanceModel).Id.ToString();
+            for (int i = 0; i < UserModel.Finance.Count; i++)
+            {
+                FinanceModel finance = UserModel.Finance[i];
+                if (finance.Id.ToString() == id)
+                {
+                    if(finance.FinanceType == Model.Enums.FinanceTypes.Expense)
+                    {
+                        UserModel.Balance += (double) UserModel.Finance[i].Amount;
+                        UserModel.TotalExpenses -= UserModel.Finance[i].Amount;
+                    }
+                    else if(finance.FinanceType == Model.Enums.FinanceTypes.Income)
+                    {
+                        UserModel.Balance -= (double) UserModel.Finance[i].Amount;
+                        UserModel.TotalRevenue -= UserModel.Finance[i].Amount;
+                    }
+                    UserModel.Finance.RemoveAt(i);
+                }
+            }
         }
 
         private void updateInfoDG_Click(object sender, RoutedEventArgs e)
