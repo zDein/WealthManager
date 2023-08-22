@@ -1,18 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using WealthManager.Model.Enums;
 using WeathManager.Model;
 
 namespace WealthManager.View
@@ -20,29 +11,29 @@ namespace WealthManager.View
     /// <summary>
     /// Interação lógica para Finances.xaml
     /// </summary>
-    public partial class Finances : UserControl
+    public partial class Finances : UserControl, INotifyPropertyChanged
     {
-
+        public event PropertyChangedEventHandler? PropertyChanged;
         public Finances()
         {
             InitializeComponent();
-
-            ShowListFinance();
-        }
-
-        public void ShowListFinance()
-        {
-            foreach (var finance in UserModel.Finance)
-            {
-                myDataGrid.Items.Add(finance);
-            }
-            CollectionViewSource.GetDefaultView(UserModel.Finance).Refresh();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var insertPage = new InsertPage();
             insertPage.ShowDialog();
+        }
+
+        private void deleteInfoDG_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void updateInfoDG_Click(object sender, RoutedEventArgs e)
+        {
+            var updatePage = new UpdatePage();
+            updatePage.ShowDialog();
         }
     }
 }

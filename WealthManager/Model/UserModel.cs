@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using WealthManager.ViewModel;
-using System.Windows.Media.Imaging;
-using System.Collections.ObjectModel;
 
 namespace WeathManager.Model
 {
@@ -15,7 +9,7 @@ namespace WeathManager.Model
     {
         // Instancia estática da classe para ser usada por todo o programa
         public static UserModel instance;
-        
+
         // Informações básicas do usuário
         public static Guid _id = Guid.NewGuid();
         public static string _name = string.Empty;
@@ -36,11 +30,14 @@ namespace WeathManager.Model
             instance = this;
         }
 
-        public event PropertyChangedEventHandler? PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
 
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
     }
 }

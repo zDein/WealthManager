@@ -84,6 +84,7 @@
 
         <ComboBox
             x:Name="typeFinanceComboBox"
+            SelectedIndex="1"
             Grid.Row="1"
             Grid.Column="1"
             Grid.ColumnSpan="2"
@@ -104,18 +105,6 @@
             <ComboBoxItem Content="Test" />
             <ComboBoxItem Content="Test2" />
             <ComboBoxItem Content="Test3" />
-            <ComboBoxItem Content="Test4" />
-            <ComboBoxItem Content="Test5" />
-            <ComboBoxItem Content="Test6" />
-            <ComboBoxItem Content="Test7" />
-            <ComboBoxItem Content="Test8" />
-            <ComboBoxItem Content="Test9" />
-            <ComboBoxItem Content="Test10" />
-            <ComboBoxItem Content="Test11" />
-            <ComboBoxItem Content="Test12" />
-            <ComboBoxItem Content="Test13" />
-            <ComboBoxItem Content="Test14" />
-            <ComboBoxItem Content="Test15" />
         </ComboBox>
         <TextBlock
             Grid.Row="1"

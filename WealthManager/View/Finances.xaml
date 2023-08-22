@@ -54,23 +54,68 @@
             Grid.Row="1"
             Grid.RowSpan="6"
             Grid.ColumnSpan="7"
-            Margin="91,30,91,10"
+            Margin="0,30,0,10"
             x:FieldModifier="public"
+            AutoGenerateColumns="False"
             BorderThickness="0,0,0,5"
+            CellStyle="{StaticResource BodyContentDataGridCentering}"
             ColumnWidth="*"
-            IsReadOnly="True">
+            IsReadOnly="True"
+            ItemsSource="{Binding FinanceList}">
 
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding UserId}" Header="User Id" />
+                <DataGridTextColumn Binding="{Binding Id}" Header="Id" />
                 <DataGridTextColumn Binding="{Binding Description}" Header="Description" />
                 <DataGridTextColumn Binding="{Binding Amount}" Header="Amount" />
                 <DataGridTextColumn Binding="{Binding FinanceType}" Header="Type" />
                 <DataGridTextColumn Binding="{Binding IncomeType}" Header="Category" />
                 <DataGridTextColumn
-                    Width="160"
+
                     Binding="{Binding DateAdded}"
                     Header="Date" />
-                <DataGridTextColumn Header="Actions" />
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="Actions" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid VerticalAlignment="Top">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Button
+                                    x:Name="updateInfoDG"
+                                    Grid.Column="1"
+                                    Grid.ColumnSpan="1"
+                                    Width="Auto"
+                                    Height="Auto"
+                                    Margin="0,-10,5,-10"
+                                    HorizontalContentAlignment="Left"
+                                    Click="updateInfoDG_Click">
+                                    <TextBlock Margin="-7,4">
+                                        <materialDesign:PackIcon Kind="Update" />
+                                    </TextBlock>
+                                </Button>
+                                <Button
+                                    x:Name="deleteInfoDG"
+                                    Grid.ColumnSpan="1"
+                                    Width="Auto"
+                                    Height="Auto"
+                                    Margin="0,-10,5,-10"
+                                    HorizontalContentAlignment="Left"
+                                    Click="deleteInfoDG_Click">
+                                    <TextBlock Margin="-7,0">
+                                        <materialDesign:PackIcon Kind="Delete" />
+                                    </TextBlock>
+                                </Button>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
 

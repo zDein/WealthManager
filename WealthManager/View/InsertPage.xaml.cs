@@ -1,19 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using WealthManager.Model.Enums;
+using WealthManager.ViewModel;
 using WeathManager.Model;
 
 namespace WealthManager.View
@@ -23,7 +12,7 @@ namespace WealthManager.View
     /// </summary>
     public partial class InsertPage : Window
     {
-
+        public Guid Guid { get; set; }
 
         public InsertPage()
         {
@@ -38,23 +27,31 @@ namespace WealthManager.View
 
         private void saveInsertFinance_Click(object sender, RoutedEventArgs e)
         {
+            Guid = Guid.NewGuid();
             try
             {
                 var finance = new FinanceModel();
-                finance.UserId = Guid.NewGuid().ToString();
+                finance.Id = Guid;
                 finance.Description = addDescription.Text;
-                finance.FinanceType = (FinanceTypes) typeFinanceComboBox.SelectedIndex;
+                finance.FinanceType = (FinanceTypes)typeFinanceComboBox.SelectedIndex;
                 finance.Amount = decimal.Parse(addAmount.Text);
+                if (finance.FinanceType == FinanceTypes.Income)
+                {
+                    UserModel.Balance += (double)finance.Amount;
+                }
+                else if (finance.FinanceType == FinanceTypes.Expense)
+                {
+                    UserModel.Balance -= (double)finance.Amount;
+                }
                 UserModel.Finance.Add(finance);
-            }catch(System.FormatException ex)
+            }
+            catch (System.FormatException ex)
             {
                 MessageBox.Show(ex.Message);
                 Close();
             }
+            MainWindow.instance.UserBalance.Text = String.Format("{0}", UserModel.Balance.ToString("C2", CultureInfo.CreateSpecificCulture("en-US")));
             Close();
         }
-
-        
-
     }
 }

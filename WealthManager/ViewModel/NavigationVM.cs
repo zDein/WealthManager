@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using System.Net.Http.Headers;
+﻿using System.Windows.Input;
 using WeathManager.Utilities;
-using WealthManager.View;
 
 namespace WealthManager.ViewModel
 {

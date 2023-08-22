@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using WealthManager.ViewModel;
-using System.Windows.Media.Imaging;
 using WealthManager.Model.Enums;
 
 namespace WeathManager.Model
@@ -15,7 +7,7 @@ namespace WeathManager.Model
     {
 
         // Informações da finança
-        public object UserId;
+        public Guid Id { get; set; }
         public FinanceTypes FinanceType { get; set; }
         public ExpenseTypes ExpenseType { get; set; }
         public IncomeTypes IncomeType { get; set; }
