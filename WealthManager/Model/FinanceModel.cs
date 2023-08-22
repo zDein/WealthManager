@@ -14,5 +14,7 @@ namespace WeathManager.Model
         public string Description { get; set; } = string.Empty;
         public object DateAdded { get; set; } = DateTime.Now.ToShortDateString();
         public decimal Amount { get; set; }
+
+       
     }
 }

@@ -10,6 +10,10 @@ namespace WeathManager.Model
         // Instancia estática da classe para ser usada por todo o programa
         public static UserModel instance;
 
+        // Variaveis da propria classe
+        decimal TotalRevenue = 0;
+        decimal TotalExpenses = 0;
+
         // Informações básicas do usuário
         public static Guid _id = Guid.NewGuid();
         public static string _name = string.Empty;
@@ -38,6 +42,32 @@ namespace WeathManager.Model
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
+        }
+
+        public decimal GetTotalRevenue()
+        {
+            foreach (var finance in Finance)
+            {
+                if(finance.FinanceType == WealthManager.Model.Enums.FinanceTypes.Income)
+                {
+                    TotalRevenue += finance.Amount;
+                }
+            }
+
+            return TotalRevenue;
+        }
+
+        public decimal GetTotalExpenses()
+        {
+            foreach (var finance in Finance)
+            {
+                if (finance.FinanceType == WealthManager.Model.Enums.FinanceTypes.Expense)
+                {
+                    TotalExpenses += finance.Amount;
+                }
+            }
+
+            return TotalExpenses;
         }
     }
 }

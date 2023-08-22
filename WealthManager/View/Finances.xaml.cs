@@ -32,7 +32,8 @@ namespace WealthManager.View
 
         private void updateInfoDG_Click(object sender, RoutedEventArgs e)
         {
-            var updatePage = new UpdatePage();
+            string id = (((Button) sender).DataContext as FinanceModel).Id.ToString();
+            var updatePage = new UpdatePage(id);
             updatePage.ShowDialog();
         }
     }

@@ -2,6 +2,7 @@
     x:Class="WealthManager.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Wpf="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
     xmlns:local="clr-namespace:WealthManager"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     StartupUri="MainWindow.xaml">

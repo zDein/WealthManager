@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:WealthManager.View"
+    xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="clr-namespace:WealthManager.ViewModel"
@@ -113,11 +114,11 @@
                     Color="#FFDCD8D8" />
             </Border.Effect>
             <TextBlock
+                x:Name="TotalRevenue"
                 Height="42"
                 Margin="10,16,14,0"
                 VerticalAlignment="Top"
-                FontSize="30"
-                Text="$ 2,698.43" />
+                FontSize="30" />
 
         </Border>
         <TextBlock
@@ -157,13 +158,7 @@
             Margin="28,58,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Background="DarkBlue">
-            <TextBlock
-                Margin="28,0,0,0"
-                Foreground="White"
-                Style="{StaticResource Text_Style}"
-                Text="Aqui vai o gráfico de despesas da tela inicial" />
-        </Border>
+            Background="DarkBlue" />
 
         <Border
             Grid.Row="3"
@@ -171,13 +166,31 @@
             Grid.Column="1"
             Grid.ColumnSpan="2"
             Margin="354,58,30,33"
-            Background="DarkCyan">
-            <TextBlock
-                Margin="10,0,0,0"
-                Foreground="White"
-                Style="{StaticResource Text_Style}"
-                Text="Aqui o gráfico de categoria das despesas"
-                TextWrapping="Wrap" />
+            Background="Transparent">
+            <lvc:PieChart BorderBrush="#FFDCDADA" BorderThickness="1">
+                <lvc:PieChart.Series>
+                    <lvc:PieSeries
+                        Title="Expenses"
+                        DataLabels="True"
+                        Values="3" />
+                    <lvc:PieSeries
+                        Title="1"
+                        DataLabels="True"
+                        Values="3" />
+                    <lvc:PieSeries
+                        Title="1"
+                        DataLabels="True"
+                        Values="3" />
+                    <lvc:PieSeries
+                        Title="1"
+                        DataLabels="True"
+                        Values="3" />
+                    <lvc:PieSeries
+                        Title="1"
+                        DataLabels="True"
+                        Values="3" />
+                </lvc:PieChart.Series>
+            </lvc:PieChart>
         </Border>
 
         <TextBlock
@@ -195,9 +208,10 @@
             Width="161"
             Height="28"
             Margin="1,6,0,0"
+            VerticalAlignment="Top"
             Foreground="#FF6F6F6F"
             Style="{StaticResource Text_Style}"
-            Text="Expense category" VerticalAlignment="Top" />
+            Text="Expense category" />
 
         <!--  Despesas recentes conta  -->
         <Border
@@ -216,11 +230,11 @@
                     Color="#FFDCD8D8" />
             </Border.Effect>
             <TextBlock
+                x:Name="TotalExpenses"
                 Height="42"
                 Margin="10,16,14,0"
                 VerticalAlignment="Top"
-                FontSize="30"
-                Text="$ 898.43" />
+                FontSize="30" />
 
         </Border>
         <TextBlock

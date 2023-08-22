@@ -69,7 +69,7 @@
             materialDesign:HintAssist.Hint="Amount" />
 
         <ComboBox
-            x:Name="typeFinanceComboBox"
+            x:Name="typeFinanceComboBoxUpdt"
             Grid.Row="1"
             Grid.Column="1"
             Grid.ColumnSpan="2"
@@ -81,7 +81,7 @@
         </ComboBox>
 
         <ComboBox
-            x:Name="typeIncomeExpenseComboBox"
+            x:Name="typeCategoryExpenseComboBox"
             Grid.Row="2"
             Grid.Column="1"
             Grid.ColumnSpan="2"

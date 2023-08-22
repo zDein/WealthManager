@@ -107,7 +107,7 @@
                                     Height="Auto"
                                     Margin="0,-10,5,-10"
                                     HorizontalContentAlignment="Left"
-                                    Click="deleteInfoDG_Click">
+                                    Click="deleteInfoDG_Click" Background="Red" BorderBrush="Red">
                                     <TextBlock Margin="-7,0">
                                         <materialDesign:PackIcon Kind="Delete" />
                                     </TextBlock>
@@ -123,6 +123,7 @@
             Grid.Column="5"
             Width="150"
             Height="50"
+            VerticalAlignment="Bottom"
             materialDesign:ButtonAssist.CornerRadius="30"
             Click="Button_Click"
             Content="New transaction"
