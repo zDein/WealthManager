@@ -33,12 +33,12 @@ O Wealth Manager é um projeto em desenvolvimento que visa criar uma solução i
 
 ## Capturas de Tela
 
+![Panels](https://github.com/zDein/WealthManager/assets/75860046/8fdefbda-b833-44cd-b0c4-398bdd4c01be)
 
-![Panels](https://github.com/zDein/WealthManager/assets/75860046/c487b8c9-bf37-409b-ac76-52fb422b5dfa)
+![Transactions](https://github.com/zDein/WealthManager/assets/75860046/694fa59e-3af2-48be-acc2-a9eb11202998)
 
-![Transactions](https://github.com/zDein/WealthManager/assets/75860046/aae1084e-1224-43d5-a28b-6877f38ac86a)
+![UserSettings](https://github.com/zDein/WealthManager/assets/75860046/654974af-aa43-4e10-bd19-70767f7d2540)
 
-![UserSettings](https://github.com/zDein/WealthManager/assets/75860046/a80e5a7f-df56-499d-9f8c-01c91578b415)
 
 ## Próximas Etapas
 
