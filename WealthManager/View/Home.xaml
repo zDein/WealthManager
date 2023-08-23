@@ -156,7 +156,7 @@
             CornerRadius="20"
             Grid.ColumnSpan="2"
             Width="696"
-            Height="253"
+            Height="258"
             Margin="28,58,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
@@ -168,7 +168,7 @@
                     Color="#FFDCD8D8" />
             </Border.Effect>
             <lvc2:CartesianChart Series="{Binding Series}">
-                
+
             </lvc2:CartesianChart>
         </Border>
 
@@ -177,9 +177,17 @@
             Grid.RowSpan="3"
             Grid.Column="1"
             Grid.ColumnSpan="2"
-            Margin="354,58,30,33"
+            Margin="354,58,30,34"
             CornerRadius="20"
-            Background="White">
+            Background="White" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-0.06"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.132"/>
+                </TransformGroup>
+            </Border.RenderTransform>
             <Border.Effect>
                 <DropShadowEffect
                     BlurRadius="20"

@@ -17,7 +17,7 @@ namespace WealthManager.ViewModel
 
             new LineSeries<decimal>
             {
-
+                Name = "ASDASD",
                 Values = UserModel.ListAmounts
                 
             }
