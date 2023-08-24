@@ -45,7 +45,7 @@ O Wealth Manager é um projeto em desenvolvimento que visa criar uma solução i
 O projeto Wealth Manager está em desenvolvimento contínuo. As próximas etapas planejadas incluem:
 
 - Aprimorar a área de configuração do perfil do usuário.
-- Implementar a funcionalidade de cadastro e edição de renda.
+- Modificar o gráfico de pontos para que tenha duas áreas: uma área que represente suas rendas e outra área que represente suas despesas.
 - Implementar a tela de dashboard para melhor visualização das suas finanças.
 - Adicionar opções de categorização avançada para despesas.
 - Expandir os recursos de geração de relatórios.
