@@ -57,8 +57,21 @@
             Width="223"
             Margin="28,66,0,35"
             HorizontalAlignment="Left"
-            Background="#FFF3F3F3"
             CornerRadius="30">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterX="0.5" CenterY="0.5" />
+                            <SkewTransform CenterX="0.5" CenterY="0.5" />
+                            <RotateTransform Angle="99.462" CenterX="0.5" CenterY="0.5" />
+                            <TranslateTransform />
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="#FF51C3EA" />
+                    <GradientStop Offset="1" Color="#FF0079C7" />
+                </LinearGradientBrush>
+            </Border.Background>
             <Border.Effect>
                 <DropShadowEffect
                     BlurRadius="20"
@@ -68,21 +81,24 @@
             <TextBlock
                 x:Name="totalBalanceHome"
                 Margin="10,16,23,72"
-                FontSize="30" />
+                FontSize="30"
+                Foreground="White" />
 
         </Border>
         <TextBlock
             x:Name="TotalBalance"
             Grid.Row="2"
             Margin="43,28,270,52"
-            FontSize="12">
+            FontSize="12"
+            Foreground="White">
             + $150<LineBreak />
             Income Today</TextBlock>
 
         <TextBlock
             Grid.Row="2"
             Margin="145,28,159,44"
-            FontSize="12">
+            FontSize="12"
+            Foreground="White">
             - $70<LineBreak />
             Expense Today</TextBlock>
 
@@ -104,10 +120,23 @@
             Grid.RowSpan="2"
             Grid.ColumnSpan="2"
             Width="213"
-            Margin="274,66,0,35"
+            Margin="272,66,0,35"
             HorizontalAlignment="Left"
-            Background="#FFF3F3F3"
             CornerRadius="30">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterX="0.5" CenterY="0.5" />
+                            <SkewTransform CenterX="0.5" CenterY="0.5" />
+                            <RotateTransform Angle="99.4" CenterX="0.5" CenterY="0.5" />
+                            <TranslateTransform />
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Offset="0.017" Color="#FF44F55F" />
+                    <GradientStop Offset="1" Color="#FF0AC80D" />
+                </LinearGradientBrush>
+            </Border.Background>
             <Border.Effect>
                 <DropShadowEffect
                     BlurRadius="20"
@@ -119,31 +148,17 @@
                 Height="42"
                 Margin="10,16,14,0"
                 VerticalAlignment="Top"
-                FontSize="30" />
+                FontSize="30"
+                Foreground="White" />
 
         </Border>
-        <TextBlock
-            Grid.Row="2"
-            Margin="295,35,26,48"
-            FontSize="12">
-            + $150<LineBreak />
-            Income Today</TextBlock>
-
-        <TextBlock
-            Grid.Row="2"
-            Grid.ColumnSpan="2"
-            Margin="389,35,338,46"
-            FontSize="12"
-            RenderTransformOrigin="0.454,0.417">
-            - $70<LineBreak />
-            Expense Today</TextBlock>
 
         <TextBlock
             Grid.Row="1"
             Grid.ColumnSpan="2"
             Width="214"
             Height="40"
-            Margin="273,9,0,0"
+            Margin="272,9,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="30"
@@ -153,23 +168,26 @@
         <Border
             Grid.Row="3"
             Grid.RowSpan="3"
-            CornerRadius="20"
             Grid.ColumnSpan="2"
             Width="696"
             Height="258"
             Margin="28,58,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Background="White" >
+            Background="White"
+            CornerRadius="20">
             <Border.Effect>
                 <DropShadowEffect
                     BlurRadius="20"
                     ShadowDepth="-1"
                     Color="#FFDCD8D8" />
             </Border.Effect>
-            <lvc2:CartesianChart Series="{Binding Series}">
-
-            </lvc2:CartesianChart>
+            <lvc2:CartesianChart
+                XAxes="{Binding XAxes}"
+                YAxes="{Binding YAxes}"
+                LegendPosition="Bottom"
+                Series="{Binding Series}"
+                ZoomMode="X" />
         </Border>
 
         <Border
@@ -178,14 +196,15 @@
             Grid.Column="1"
             Grid.ColumnSpan="2"
             Margin="354,58,30,34"
+            Background="White"
             CornerRadius="20"
-            Background="White" RenderTransformOrigin="0.5,0.5">
+            RenderTransformOrigin="0.5,0.5">
             <Border.RenderTransform>
                 <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleX="-0.06"/>
-                    <RotateTransform/>
-                    <TranslateTransform X="-0.132"/>
+                    <ScaleTransform />
+                    <SkewTransform AngleX="-0.06" />
+                    <RotateTransform />
+                    <TranslateTransform X="-0.132" />
                 </TransformGroup>
             </Border.RenderTransform>
             <Border.Effect>
@@ -194,47 +213,25 @@
                     ShadowDepth="-1"
                     Color="#FFDCD8D8" />
             </Border.Effect>
-            <lvc:PieChart BorderBrush="#FFDCDADA" BorderThickness="1">
-                <lvc:PieChart.Series>
-                    <lvc:PieSeries
-                        Title="Expenses"
-                        DataLabels="True"
-                        Values="1" />
-                    <lvc:PieSeries
-                        Title="1"
-                        DataLabels="True"
-                        Values="2" />
-                    <lvc:PieSeries
-                        Title="1"
-                        DataLabels="True"
-                        Values="3" />
-                    <lvc:PieSeries
-                        Title="1"
-                        DataLabels="True"
-                        Values="4" />
-                    <lvc:PieSeries
-                        Title="2"
-                        DataLabels="True"
-                        Values="5" />
-                </lvc:PieChart.Series>
-            </lvc:PieChart>
+            <lvc2:PieChart Series="{Binding PieSeries}" />
         </Border>
 
         <TextBlock
             Grid.Row="3"
             Width="130"
             Height="22"
-            Margin="38,14,0,0"
+            Margin="38,24,0,0"
             VerticalAlignment="Top"
             Foreground="#FF6F6F6F"
             Style="{StaticResource Text_Style}"
             Text="Transation tracker" />
         <TextBlock
             Grid.Row="3"
-            Grid.Column="2"
-            Width="161"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            Width="147"
             Height="28"
-            Margin="1,6,0,0"
+            Margin="400,23,0,0"
             VerticalAlignment="Top"
             Foreground="#FF6F6F6F"
             Style="{StaticResource Text_Style}"
@@ -248,8 +245,21 @@
             Width="213"
             Margin="0,66,0,35"
             HorizontalAlignment="Center"
-            Background="#FFF3F3F3"
             CornerRadius="30">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterX="0.5" CenterY="0.5" />
+                            <SkewTransform CenterX="0.5" CenterY="0.5" />
+                            <RotateTransform Angle="99" CenterX="0.5" CenterY="0.5" />
+                            <TranslateTransform />
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="#FFF74343" />
+                    <GradientStop Offset="1" Color="#FFB72323" />
+                </LinearGradientBrush>
+            </Border.Background>
             <Border.Effect>
                 <DropShadowEffect
                     BlurRadius="20"
@@ -261,20 +271,11 @@
                 Height="42"
                 Margin="10,16,14,0"
                 VerticalAlignment="Top"
-                FontSize="30" />
+                FontSize="30"
+                Foreground="White" />
 
         </Border>
-        <TextBlock
-            Grid.Row="2"
-            Grid.Column="1"
-            Margin="115,35,207,49"
-            FontSize="12"><Run Text="+ $150" /><LineBreak /><Run Text="Income Today" /></TextBlock>
-        <TextBlock
-            Grid.Row="2"
-            Grid.Column="1"
-            Margin="219,35,101,49"
-            FontSize="12"
-            RenderTransformOrigin="0.454,0.417"><Run Text="- $70" /><LineBreak /><Run Text="Expense Today" /></TextBlock>
+        
         <TextBlock
             Grid.Row="1"
             Grid.Column="1"
@@ -287,15 +288,15 @@
             FontWeight="Regular"
             Foreground="#FF6F6F6F"><Run Language="pt-br" Text="Expenses" /></TextBlock>
 
-        <Border 
-            Background="#e3e3e3"
-            CornerRadius="100" 
-            Grid.Column="1"
+        <Border
             Grid.Row="1"
-            Margin="354,10,31,10" 
-            Grid.RowSpan="2" 
-            Grid.ColumnSpan="2">
-            <ListBox Background="Bisque" >
+            Grid.RowSpan="2"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            Margin="354,10,31,35"
+            Background="LightGray"
+            CornerRadius="30">
+            <ListBox Background="LightGray" BorderThickness="10">
                 <ListBoxItem Height="60" Content="Notification 01" />
                 <ListBoxItem Height="60" Content="Notification 02" />
                 <ListBoxItem Height="60" Content="Notification 03" />

@@ -9,7 +9,7 @@
     xmlns:menu="clr-namespace:WeathManager.Utilities"
     xmlns:view="clr-namespace:WealthManager.View"
     xmlns:vm="clr-namespace:WealthManager.ViewModel"
-    Title="MainWindow"
+    Title="Wealth Manager"
     Width="1280"
     Height="720"
     FontFamily="{materialDesign:MaterialDesignFont}"
@@ -67,7 +67,7 @@
                             FontSize="16"
                             FontWeight="DemiBold"
                             Foreground="LightSeaGreen"
-                            Text="Weather Manager" />
+                            Text="Wealth Manager" />
                     </StackPanel>
 
                     <Border

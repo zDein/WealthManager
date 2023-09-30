@@ -8,6 +8,8 @@ using WeathManager.Model;
 using LiveChartsCore;
 using LiveChartsCore.SkiaSharpView;
 using WealthManager.ViewModel;
+using LiveChartsCore.SkiaSharpView.Extensions;
+using System.Collections.Generic;
 
 namespace WealthManager.View
 {
@@ -31,6 +33,8 @@ namespace WealthManager.View
             totalRevenue = TotalRevenue;
             SetUserInfo();
         }
+
+        
 
         public void SetUserInfo()
         {
